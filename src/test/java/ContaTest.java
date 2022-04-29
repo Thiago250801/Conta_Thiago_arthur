@@ -62,7 +62,7 @@ public class ContaTest {
         saque = 50.00;
         resultado = conta.sacar(saque);
 
-        Assertions.assertEquals(200, conta.getSaldo(), 0.001);
+        Assertions.assertEquals(150, conta.getSaldo(), 0.001);
         Assertions.assertFalse(resultado);
     }
 
