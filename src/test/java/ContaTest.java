@@ -102,14 +102,11 @@ public class ContaTest {
         Assertions.assertEquals(0.00,conta.getSaldo(),0.001);
         Assertions.assertFalse(resultado);
 
-        if((conta.getSaldo()==0.00) && !resultado){
-            System.out.println("PASSOU no teste!");
-        }else{
-            System.out.println("NAO PASSOU no teste!");
-        }
+
 
     }
-
+    @DisplayName("Não deve sacar da conta desativada.")
+    @Test
     public void NaoDeveSacarDaContaDesativada() {
 
 
