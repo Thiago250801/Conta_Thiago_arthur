@@ -62,7 +62,7 @@ public class ContaTest {
         saque = 50.00;
         resultado = conta.sacar(saque);
 
-        Assertions.assertEquals(200, conta.getSaldo(), 0.001);
+        Assertions.assertEquals(150, conta.getSaldo(), 0.001);
         Assertions.assertFalse(resultado);
     }
 
@@ -88,7 +88,7 @@ public class ContaTest {
 
     @DisplayName("Nao deve depositar na conta desativada")
     @Test
-     public void NaoDeveDepositarNaContaDesativada(){
+    public void NaoDeveDepositarNaContaDesativada(){
 
 
         conta = new Conta();
@@ -102,19 +102,16 @@ public class ContaTest {
         Assertions.assertEquals(0.00,conta.getSaldo(),0.001);
         Assertions.assertFalse(resultado);
 
-        if((conta.getSaldo()==0.00) && !resultado){
-            System.out.println("PASSOU no teste!");
-        }else{
-            System.out.println("NAO PASSOU no teste!");
-        }
+
 
     }
-
+    @DisplayName("Não deve sacar da conta desativada.")
+    @Test
     public void NaoDeveSacarDaContaDesativada() {
 
 
         conta = new Conta();
-        conta.ativar();
+        conta.desativar();
 
         depositoInicial = 100.00;
         conta.depositar(depositoInicial);
@@ -128,5 +125,4 @@ public class ContaTest {
 
     }
 }
-
 
